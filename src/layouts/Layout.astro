@@ -1,6 +1,7 @@
 ---
 import styles from './layoutPage.module.scss';
-
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 ---
 
 <!doctype html>
@@ -13,8 +14,9 @@ import styles from './layoutPage.module.scss';
 		<title>The Scientific Seiko 2025</title>
 	</head>
 	<body>
-		
+		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
 
