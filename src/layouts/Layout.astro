@@ -16,6 +16,11 @@ import Footer from '../components/layoutFunc/Footer.svelte';
     <Header />
     <slot />
     <Footer client:only />
+    <noscript>
+      <footer>
+        <p>&copy; 大阪星光学院天文部</p>
+      </footer>
+    </noscript>
   </body>
 </html>
 
