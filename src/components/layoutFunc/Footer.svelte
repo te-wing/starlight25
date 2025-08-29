@@ -1,4 +1,4 @@
-<script>
+<script lang='ts'>
 
 </script>
 
@@ -6,6 +6,6 @@
 
 </div>
 
-<style>
+<style lang='scss'>
 
 </style>
