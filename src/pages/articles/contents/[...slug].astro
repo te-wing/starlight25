@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const articlePosts = await getCollection('article');
+  return articlePosts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title}>
+  <head>
+    <title>{post.data.title} | The Scientific Seiko 2025</title>
+    <meta name="description" content="{post.data.description}" />
+  </head>
+  <article>
+    <h2>{post.data.title}</h2>
+    <p>著者：{post.data.author}</p>
+    <Content />
+  </article>
+</Layout>
