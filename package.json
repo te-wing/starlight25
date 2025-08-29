@@ -12,7 +12,7 @@
     "@astrojs/cloudflare": "^12.6.0",
     "@astrojs/sitemap": "^3.5.1",
     "@astrojs/svelte": "^7.1.0",
-    "astro": "^5.12.3",
+    "astro": "^5.13.4",
     "sass": "^1.89.2",
     "svelte": "^5.38.6",
     "typescript": "^5.9.2"
