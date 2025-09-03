@@ -1,6 +1,7 @@
 ---
 import Header from '../components/layoutFunc/Header.astro';
 import Footer from '../components/layoutFunc/Footer.svelte';
+import { ClientRouter } from 'astro:transitions';
 ---
 
 <!doctype html>
@@ -11,16 +12,12 @@ import Footer from '../components/layoutFunc/Footer.svelte';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="noindex" />
+    <ClientRouter />
   </head>
   <body>
     <Header />
-    <slot />
+    <slot transition:animate=slide />
     <Footer client:load />
-    <noscript>
-      <footer>
-        <p>&copy; 大阪星光学院天文部</p>
-      </footer>
-    </noscript>
   </body>
 </html>
 
