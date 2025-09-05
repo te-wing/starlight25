@@ -5,6 +5,8 @@
 
   let about: string = '';
   let 説明文: string = '';
+  let other: string = '';
+
   let username: string = '';
   let email: string = '';
   let comment: string = '';
@@ -14,9 +16,11 @@
   
   if (aboutThis === 'book') {
     about = '部誌';
+    other = 'プラネタリウム';
     説明文 = '天文部の部誌「The Scientific Seiko」';
   } else if (aboutThis === 'planetarium') {
     about = 'プラネタリウム';
+    other = '部誌';
     説明文 = '天文部のプラネタリウム';
   }
 
@@ -27,6 +31,14 @@
 </script>
 
 <div>
+  <p class='linkToOther'>
+    {other}のアンケートは
+    {#if (about === '部誌')}
+      <a href='/form/planetarium'>こちら</a>
+    {:else}
+      <a href='/form/'>こちら</a>
+    {/if}
+  </p>
   <h2>{about}についてのアンケート</h2>
   <p>{説明文}について，ご意見をお聞かせください．</p>
   <p>「<RequiredMark />」がついている項目は，回答必須です．</p><br>
