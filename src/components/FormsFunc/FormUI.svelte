@@ -54,7 +54,7 @@
       <label for='email'>メールアドレス</label><br>
       <input class='text' type='email' id='email' placeholder='user@example.com' bind:value={email} />
     </fieldset>
-    {#if aboutThis === 'book'}
+    {#if (aboutThis === 'book')}
       <fieldset>
         <legend>部誌について</legend>
         <p><RequiredMark />以下の中から，お読みになった，または現在お読みになっている部誌を全て選んでください．</p>
@@ -65,7 +65,7 @@
         <input type="checkbox" id="ver3" name="ver" value="javascript">
         <label for="ver3">活動報告</label><br><br>
       </fieldset>
-    {:else if aboutThis === 'planetarium'}
+    {:else if (aboutThis === 'planetarium')}
       <fieldset>
         <legend>プラネタリウムについて</legend>
         <label for='length'>プラネタリウムの時間（約10分）はいかがでしたか？</label><br>
