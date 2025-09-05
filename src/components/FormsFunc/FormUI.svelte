@@ -35,9 +35,9 @@
     <fieldset>
       <legend>あなたについて</legend>
       <label for='name'>お名前</label><br>
-      <input bind:value={username} id='name' type='text' placeholder='ニックネーム可' /><br>
+      <input class='text' bind:value={username} id='name' type='text' placeholder='ニックネーム可' /><br>
       <label for='email'>メールアドレス</label><br>
-      <input type='email' id='email' placeholder='user@example.com' bind:value={email} />
+      <input class='text' type='email' id='email' placeholder='user@example.com' bind:value={email} />
     </fieldset>
     {#if aboutThis === 'book'}
       <fieldset>
@@ -67,6 +67,13 @@
 <style lang='scss'>
   input {
     margin-bottom: 1em;
+  }
+
+  .text {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 240px;
+    height: 3em;
   }
   
   fieldset {
