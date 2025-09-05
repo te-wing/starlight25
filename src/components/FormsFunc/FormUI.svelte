@@ -1,7 +1,9 @@
 <script lang="ts">
   import RequiredMark from './RequiredMark.svelte';
 
-  let about: string = 'undefined';
+  let about: string = '';
+  let username: string = '';
+  let email: string = '';
 
   export let aboutThis;
   
@@ -15,11 +17,14 @@
 <div>
   <h2>{about}についてのアンケート</h2>
   <p>天文部の部誌「The Scientific Seiko」について，ご意見をお聞かせください．</p>
-  <p>「<RequiredMark />」がついている項目は，回答必須です．</p>
+  <p>「<RequiredMark />」がついている項目は，回答必須です．</p><br>
 
   <form>
-    <label for='username'>お名前</label>
-    <input name='username' id='username' type='text' placeholder='ニックネームも可' />
+    <label for='name'>お名前</label>
+    <input bind:value={username} id='name' type='text' placeholder='ニックネーム可' /><br><br>
+    <label for='email'>メールアドレス</label>
+    <input type='email' id='email' placeholder='user@example.com' bind:value={email} /><br><br>
+    
   </form>
 </div>
 
