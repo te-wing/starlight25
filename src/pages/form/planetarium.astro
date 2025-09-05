@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import FormUI from '../../components/FormsFunc/FormUI.svelte';
+---
+
+<Layout>
+  <div>
+    <head>
+      <title>プラネタリウムに関するアンケート | The Scientific Seiko 2025</title>
+    </head>
+    <section>
+      <FormUI aboutThis="planetarium" client:load />
+    </section>
+  </div>
+</Layout>
