@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import FormUI from '../../components/FormsFunc/FormUI.svelte';
+import JSRequired from '../../components/ErrorMessage/JSRequired.svelte';
 ---
 
 <Layout>
@@ -9,6 +10,7 @@ import FormUI from '../../components/FormsFunc/FormUI.svelte';
       <title>アンケート | The Scientific Seiko 2025</title>
     </head>
     <section>
+      <JSRequired thisPage="このアンケート" client:load />
       <FormUI aboutThis="book" client:load />
     </section>
   </div>

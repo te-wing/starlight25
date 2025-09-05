@@ -73,7 +73,7 @@
           <option value=''>選択してください</option>
           <option value='too-short'>短すぎる</option>
           <option value='short'>少し短い</option>
-          <option value='good'>丁度良い</option>
+          <option value='good'>ちょうど良い</option>
           <option value='long'>少し長い</option>
           <option value='too-long'>長すぎる</option>
         </select>
