@@ -5,6 +5,7 @@
   let 説明文: string = '';
   let username: string = '';
   let email: string = '';
+  let comment: string = '';
 
   export let aboutThis;
   
@@ -15,6 +16,11 @@
     about = 'プラネタリウム';
     説明文 = '天文部のプラネタリウム';
   }
+
+  function handleSubmit() {
+    event?.preventDefault();
+    alert('送信中');
+  }
 </script>
 
 <div>
@@ -22,7 +28,7 @@
   <p>{説明文}について，ご意見をお聞かせください．</p>
   <p>「<RequiredMark />」がついている項目は，回答必須です．</p><br>
 
-  <form>
+  <form on:submit={handleSubmit}>
     <fieldset>
       <legend>あなたについて</legend>
       <label for='name'>お名前</label><br>
@@ -40,17 +46,31 @@
         <label for="ver2">本篇・下巻</label><br>
         <input type="checkbox" id="ver3" name="ver" value="javascript">
         <label for="ver3">活動報告</label><br><br>
-
-        <p><RequiredMark />既にお読みになっている部誌について，評価を教えてください．</p>
       </fieldset>
     {:else if aboutThis === 'planetarium'}
 
     {/if}
+    <fieldset>
+      <legend>評価とコメント</legend>
+      <label for='comment'>フィードバック・コメントなどをお書きください．</label><br>
+      <textarea placeholder='ここにコメントを入力' id='comment' bind:value={comment}></textarea>
+    </fieldset>
+    <button type='submit'>送信</button>
   </form>
 </div>
 
 <style lang='scss'>
   input {
     margin-bottom: 1em;
+  }
+  
+  fieldset {
+    padding: 4px 11px;
+  }
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 7em;
   }
 </style>
