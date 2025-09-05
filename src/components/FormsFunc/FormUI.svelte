@@ -81,7 +81,7 @@
       <legend>評価とコメント</legend>
 
 
-      <label for='comment'>フィードバック・コメントなどをお書きください．</label><br>
+      <label for='comment'>ご意見・コメントなどをお書きください．</label><br>
       <textarea placeholder='ここにコメントを入力' id='comment' bind:value={comment}></textarea>
     </fieldset>
     <button type='submit'>送信</button>
