@@ -36,8 +36,10 @@
     {other}のアンケートは
     {#if (about === '部誌')}
       <a href='/form/planetarium'>こちら</a>
-    {:else}
+    {:else if (about === 'プラネタリウム')}
       <a href='/form/'>こちら</a>
+    {:else}
+      <a href='/error'>エラー</a>
     {/if}
   </p>
   <h2>{about}についてのアンケート</h2>
@@ -76,6 +78,8 @@
           <option value='too-long'>長すぎる</option>
         </select>
       </fieldset>
+    {:else}
+      <a href='/error'>エラー</a>
     {/if}
     <fieldset>
       <legend>評価とコメント</legend>
