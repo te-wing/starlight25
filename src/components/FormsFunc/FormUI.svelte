@@ -18,7 +18,8 @@
   <p>「<RequiredMark />」がついている項目は，回答必須です．</p>
 
   <form>
-
+    <label for='username'>お名前</label>
+    <input name='username' id='username' type='text' placeholder='ニックネームも可' />
   </form>
 </div>
 
