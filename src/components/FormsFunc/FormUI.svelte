@@ -1,11 +1,14 @@
 <script lang="ts">
   import RequiredMark from './RequiredMark.svelte';
 
+  type IntegerFrom0To5 = 0 | 1 | 2 | 3 | 4 | 5;
+
   let about: string = '';
   let 説明文: string = '';
   let username: string = '';
   let email: string = '';
   let comment: string = '';
+  let rate: IntegerFrom0To5 = 0;
 
   export let aboutThis;
   
@@ -52,6 +55,8 @@
     {/if}
     <fieldset>
       <legend>評価とコメント</legend>
+
+
       <label for='comment'>フィードバック・コメントなどをお書きください．</label><br>
       <textarea placeholder='ここにコメントを入力' id='comment' bind:value={comment}></textarea>
     </fieldset>
