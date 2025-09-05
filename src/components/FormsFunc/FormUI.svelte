@@ -41,7 +41,7 @@
   </p>
   <h2>{about}についてのアンケート</h2>
   <p>{説明文}について，ご意見をお聞かせください．</p>
-  <p>「<RequiredMark />」がついている項目は，回答必須です．</p><br>
+  <p>「<RequiredMark />」がついている項目は回答必須，その他の項目は任意です．</p>
 
   <form on:submit={handleSubmit}>
     <fieldset>
