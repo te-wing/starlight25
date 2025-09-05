@@ -12,6 +12,7 @@
   let comment: string = '';
   let rate: IntegerFrom0To5 = 0;
   let length: string = '';
+  let alreadyRead: string[] = [];
 
   export let aboutThis;
   
@@ -58,11 +59,11 @@
       <fieldset>
         <legend>部誌について</legend>
         <p><RequiredMark />以下の中から，お読みになった，または現在お読みになっている部誌を全て選んでください．</p>
-        <input type="checkbox" id="ver1" name="ver" value="本篇・上巻">
+        <input type="checkbox" id="ver1" name="ver" value="本篇・上巻" bind:group={alreadyRead}>
         <label for="ver1">本篇・上巻</label><br>
-        <input type="checkbox" id="ver2" name="ver" value="本編・下巻">
+        <input type="checkbox" id="ver2" name="ver" value="本編・下巻" bind:group={alreadyRead}>
         <label for="ver2">本篇・下巻</label><br>
-        <input type="checkbox" id="ver3" name="ver" value="javascript">
+        <input type="checkbox" id="ver3" name="ver" value="活動報告" bind:group={alreadyRead}>
         <label for="ver3">活動報告</label><br><br>
       </fieldset>
     {:else if (aboutThis === 'planetarium')}
