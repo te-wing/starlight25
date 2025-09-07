@@ -108,7 +108,7 @@
       <label for='comment'>ご意見・コメントなどをお書きください．</label><br>
       <textarea placeholder='ここにコメントを入力' id='comment' bind:value={comment}></textarea>
     </fieldset>
-    <TurnstileWidget widgetRenderId={0} />
+    <TurnstileWidget />
     <button type='submit'>送信</button>
   </form>
   <div>
