@@ -33,7 +33,7 @@
   }
 </script>
 
-<div>
+<div class='whole'>
   <p class='linkToOther'>
     {other}のアンケートは
     {#if (about === '部誌')}
@@ -54,7 +54,7 @@
       <label for='name'>お名前</label><br>
       <input class='text' bind:value={username} id='name' type='text' placeholder='ニックネーム可' /><br>
       <label for='email'>メールアドレス</label><br>
-      <input class='text' type='email' id='email' placeholder='user@example.com' bind:value={email} />
+      <input class='emailarea' type='email' id='email' placeholder='user@example.com' bind:value={email} />
     </fieldset>
     <fieldset>
       <legend>{about}について</legend>
@@ -67,7 +67,7 @@
         <input type="checkbox" id="ver3" name="ver" value="活動報告" bind:group={alreadyRead}>
         <label for="ver3">活動報告</label><br><br>
       {:else if (aboutThis === 'planetarium')}
-        <label for='length'>プラネタリウムの時間（約10分）はいかがでしたか？</label><br>
+        <label for='length'><RequiredMark />プラネタリウムの時間（約10分）はいかがでしたか？</label><br>
         <select id='name' bind:value={length}>
           <option value=''>選択してください</option>
           <option value='too-short'>短すぎる</option>
@@ -80,7 +80,7 @@
         <a href='/error'>エラー</a>
       {/if}
       <br>
-      <p>{about}の内容はいかがでしたか？</p>
+      <p><RequiredMark />{about}の内容はいかがでしたか？</p>
       <label>
         <input bind:group={rate} type='radio' name='rate' value={1} />
         <Star currentRate={rate} rateStar={1} />
@@ -121,15 +121,27 @@
 </div>
 
 <style lang='scss'>
+  .whole {
+    font-family: ZenMaru;
+  }
+
   input {
     margin-bottom: 1em;
   }
 
-  .text {
+  .text, .emailarea {
     width: 100%;
     box-sizing: border-box;
-    max-width: 240px;
+    max-width: 340px;
     height: 3em;
+    font-size: 1em;
+  }
+
+  .emailarea {
+    font-family: Code;
+  }
+  textarea {
+    font-size: 1em;
   }
   
   fieldset {
