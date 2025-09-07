@@ -1,7 +1,7 @@
 <script lang="ts">
   export let widgetRenderId: number;
 
-  widgetRenderId = widgetRenderId + 1
+  widgetRenderId = 2;
 </script>
 
 <div>
