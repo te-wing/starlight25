@@ -55,9 +55,9 @@
       <label for='email'>メールアドレス</label><br>
       <input class='text' type='email' id='email' placeholder='user@example.com' bind:value={email} />
     </fieldset>
-    {#if (aboutThis === 'book')}
-      <fieldset>
-        <legend>部誌について</legend>
+    <fieldset>
+      <legend>{about}について</legend>
+      {#if (aboutThis === 'book')}
         <p><RequiredMark />以下の中から，お読みになった，または現在お読みになっている部誌を全て選んでください．</p>
         <input type="checkbox" id="ver1" name="ver" value="本篇・上巻" bind:group={alreadyRead}>
         <label for="ver1">本篇・上巻</label><br>
@@ -65,10 +65,7 @@
         <label for="ver2">本篇・下巻</label><br>
         <input type="checkbox" id="ver3" name="ver" value="活動報告" bind:group={alreadyRead}>
         <label for="ver3">活動報告</label><br><br>
-      </fieldset>
-    {:else if (aboutThis === 'planetarium')}
-      <fieldset>
-        <legend>プラネタリウムについて</legend>
+      {:else if (aboutThis === 'planetarium')}
         <label for='length'>プラネタリウムの時間（約10分）はいかがでしたか？</label><br>
         <select id='name' bind:value={length}>
           <option value=''>選択してください</option>
@@ -78,19 +75,28 @@
           <option value='long'>少し長い</option>
           <option value='too-long'>長すぎる</option>
         </select>
-      </fieldset>
-    {:else}
-      <a href='/error'>エラー</a>
-    {/if}
+      {:else}
+        <a href='/error'>エラー</a>
+      {/if}
+      <br>
+      <p>{about}の内容はいかがでしたか？</p>
+    </fieldset>
     <fieldset>
-      <legend>評価とコメント</legend>
-
-
+      <legend>コメント</legend>
       <label for='comment'>ご意見・コメントなどをお書きください．</label><br>
       <textarea placeholder='ここにコメントを入力' id='comment' bind:value={comment}></textarea>
     </fieldset>
     <button type='submit'>送信</button>
   </form>
+  <div>
+    <h4>DEV 変数一覧</h4>
+    <p>username {username}</p>
+    <p>email {email}</p>
+    <p>comment {comment}</p>
+    <p>rate {rate}</p>
+    <p>length {length}</p>
+    <p>alreadyRead {alreadyRead}</p>
+  </div>
 </div>
 
 <style lang='scss'>
