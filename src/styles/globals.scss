@@ -8,13 +8,23 @@ body {
 @font-face {
   font-family: 'BizUDMincho';
   src: url('/fonts/BIZUDMincho-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
   font-family: 'EpItalic';
   src: url('/fonts/EpundaSlab-Italic-VariableFont_wght.ttf');
-  font-weight: normal;
-  font-style: italic;
+}
+
+@font-face {
+  font-family: 'EpNormal';
+  src: url('/fonts/EpundaSlab-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: Sawarabi;
+  src: url('/fonts/SawarabiGothic-Regular.ttf');
+}
+
+strong, legend {
+  font-family: Sawarabi;
 }
