@@ -80,6 +80,10 @@
       {/if}
       <br>
       <p>{about}の内容はいかがでしたか？</p>
+      <label>
+        <input type='radio' name='rate' value={1}>
+        <span>⭐️</span>
+      </label>
     </fieldset>
     <fieldset>
       <legend>コメント</legend>
@@ -119,5 +123,9 @@
     width: 100%;
     box-sizing: border-box;
     height: 7em;
+  }
+
+  input[type="radio"] {
+    display: none;
   }
 </style>
