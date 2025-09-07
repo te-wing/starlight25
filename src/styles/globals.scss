@@ -4,3 +4,17 @@ body {
   width: 100%;
   height: 100%;
 }
+
+@font-face {
+  font-family: 'BizUDMincho';
+  src: url('/fonts/BIZUDMincho-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EpItalic';
+  src: url('/fonts/EpundaSlab-Italic-VariableFont_wght.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
