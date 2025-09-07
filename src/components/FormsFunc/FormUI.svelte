@@ -33,7 +33,7 @@
   }
 </script>
 
-<div class='whole'>
+<div>
   <p class='linkToOther'>
     {other}のアンケートは
     {#if (about === '部誌')}
@@ -121,10 +121,6 @@
 </div>
 
 <style lang='scss'>
-  .whole {
-    font-family: ZenMaru;
-  }
-
   input {
     margin-bottom: 1em;
   }
@@ -138,10 +134,12 @@
   }
 
   .emailarea {
-    font-family: Code;
+    font-family: FiraCode;
   }
-  textarea {
+
+  .text, textarea {
     font-size: 1em;
+    font-family: ZenMaru;
   }
   
   fieldset {
@@ -156,5 +154,9 @@
 
   input[type="radio"] {
     display: none;
+  }
+
+  legend {
+    font-family: Sawarabi;
   }
 </style>
