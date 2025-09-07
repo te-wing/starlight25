@@ -5,11 +5,10 @@ import cloudflare from '@astrojs/cloudflare';
 import svelte from '@astrojs/svelte';
 import sitemap from '@astrojs/sitemap';
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  integrations: [
-    svelte(),
-    sitemap()
-  ],
+  integrations: [svelte(), sitemap(), react()],
 });
