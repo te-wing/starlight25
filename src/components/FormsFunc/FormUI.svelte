@@ -82,10 +82,25 @@
       <br>
       <p>{about}の内容はいかがでしたか？</p>
       <label>
-        <input bind:group={rate} type='radio' name='rate' value={1}>
-        <Star currentRate={rate} rateStar={1}/>
+        <input bind:group={rate} type='radio' name='rate' value={1} />
+        <Star currentRate={rate} rateStar={1} />
       </label>
-
+      <label>
+        <input bind:group={rate} type='radio' name='rate' value={2} />
+        <Star currentRate={rate} rateStar={2} />
+      </label>
+      <label>
+        <input bind:group={rate} type='radio' name='rate' value={3} />
+        <Star currentRate={rate} rateStar={3} />
+      </label>
+      <label>
+        <input bind:group={rate} type='radio' name='rate' value={4} />
+        <Star currentRate={rate} rateStar={4} />
+      </label>
+      <label>
+        <input bind:group={rate} type='radio' name='rate' value={5} />
+        <Star currentRate={rate} rateStar={5} />
+      </label>
     </fieldset>
     <fieldset>
       <legend>コメント</legend>
