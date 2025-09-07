@@ -2,8 +2,6 @@
   export let rateStar: number;
   export let currentRate: number;
 
-  let starFilled: boolean = false;
-
   $: starFilled = rateStar > currentRate;
 </script>
 
