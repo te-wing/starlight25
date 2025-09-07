@@ -1,5 +1,6 @@
 <script lang="ts">
   import RequiredMark from './RequiredMark.svelte';
+  import Star from './Star.svelte';
 
   type IntegerFrom0To5 = 0 | 1 | 2 | 3 | 4 | 5;
 
@@ -81,9 +82,10 @@
       <br>
       <p>{about}の内容はいかがでしたか？</p>
       <label>
-        <input type='radio' name='rate' value={1}>
-        <span>⭐️</span>
+        <input bind:group={rate} type='radio' name='rate' value={1}>
+        <Star currentRate={rate} rateStar={1}/>
       </label>
+
     </fieldset>
     <fieldset>
       <legend>コメント</legend>
