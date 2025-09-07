@@ -1,6 +1,7 @@
 <script lang="ts">
   import RequiredMark from './RequiredMark.svelte';
   import Star from './Star.svelte';
+  import TurnstileWidget from './TurnstileWidget.svelte';
 
   type IntegerFrom0To5 = 0 | 1 | 2 | 3 | 4 | 5;
 
@@ -107,6 +108,7 @@
       <label for='comment'>ご意見・コメントなどをお書きください．</label><br>
       <textarea placeholder='ここにコメントを入力' id='comment' bind:value={comment}></textarea>
     </fieldset>
+    <TurnstileWidget widgetRenderId={0} />
     <button type='submit'>送信</button>
   </form>
   <div>
