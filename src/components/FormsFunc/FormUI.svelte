@@ -174,15 +174,6 @@
     <Turnstile siteKey='0x4AAAAAABycHtFvIrRAAG4r'/>
     <button type='submit'>送信</button>
   </form>
-  <div>
-    <h4>DEV 変数一覧</h4>
-    <p>username {username}</p>
-    <p>email {email}</p>
-    <p>comment {comment}</p>
-    <p>rate {rate}</p>
-    <p>length {length}</p>
-    <p>alreadyRead {alreadyRead}</p>
-  </div>
 </div>
 
 <style lang='scss'>
