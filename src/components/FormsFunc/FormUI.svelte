@@ -16,7 +16,7 @@
   let length: string = '';
   let alreadyRead: string[] = [];
 
-  export let aboutThis;
+  export let aboutThis: string;
   
   if (aboutThis === 'book') {
     about = '部誌';
@@ -28,9 +28,34 @@
     説明文 = '天文部のプラネタリウム';
   }
 
-  function handleSubmit() {
+  async function handleSubmit(event: Event) {
     event?.preventDefault();
-    alert('送信中');
+
+    // フォームの要素を取得し、FormDataオブジェクトを生成
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    // aboutの値をFormDataに追加 (サーバー側で必要)
+    formData.append('about', aboutThis);
+
+    try {
+      // fetch APIを使ってサーバーにPOSTリクエストを送信
+      const response = await fetch('https://form.starlight25.wing.osaka', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert(result.message);
+      } else {
+        alert(`送信失敗: ${result.error}`);
+      }
+    } catch (e) {
+      alert('通信エラーが発生しました。');
+      console.error('Error:', e);
+    }
   }
 </script>
 
