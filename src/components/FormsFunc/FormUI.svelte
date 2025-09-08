@@ -78,7 +78,7 @@
 
     try {
       // fetch APIを使ってサーバーにPOSTリクエストを送信
-      const response = await fetch('/api/submit', {
+      const response = await fetch('https://form.starlight25.wing.osaka', {
         method: 'POST',
         body: formData,
       });
