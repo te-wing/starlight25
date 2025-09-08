@@ -21,5 +21,8 @@
     "sass": "^1.89.2",
     "svelte": "^5.38.6",
     "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "svelte-turnstile": "^0.11.0"
   }
 }
