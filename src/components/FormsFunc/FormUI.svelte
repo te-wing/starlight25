@@ -17,7 +17,7 @@
   let alreadyRead: string[] = [];
 
   export let aboutThis: string;
-  
+ 
   if (aboutThis === 'book') {
     about = '部誌';
     other = 'プラネタリウム';
@@ -35,12 +35,50 @@
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
 
+    let hasError = false;
+
+    const aboutValue = aboutThis;
+
+    if (!aboutValue) {
+      alert('アンケートの種類が指定されていません。');
+      hasError = true;
+    }
+
+    // rate (1~5の評価)
+    const rateValue = formData.get('rate');
+    if (!rateValue || parseInt(rateValue as string, 10) < 1 || parseInt(rateValue as string, 10) > 5) {
+      alert('評価は必須項目です。1から5の星を選択してください。');
+      hasError = true;
+    }
+
+    // aboutThisが 'book' の場合のチェックボックス
+    if (aboutThis === 'book') {
+      const alreadyReadCheckboxes = formData.getAll('alreadyRead');
+      if (alreadyReadCheckboxes.length === 0) {
+        alert('お読みになった部誌を一つ以上選択してください。');
+        hasError = true;
+      }
+    }
+
+    // aboutThisが 'planetarium' の場合のセレクトボックス
+    if (aboutThis === 'planetarium') {
+      const lengthValue = formData.get('length');
+      if (!lengthValue || lengthValue === '') {
+        alert('プラネタリウムの時間は必須項目です。選択してください。');
+        hasError = true;
+      }
+    }
+
+    // エラーがあれば送信を中止
+    if (hasError) {
+      return;
+    }
     // aboutの値をFormDataに追加 (サーバー側で必要)
     formData.append('about', aboutThis);
 
     try {
       // fetch APIを使ってサーバーにPOSTリクエストを送信
-      const response = await fetch('https://form.starlight25.wing.osaka', {
+      const response = await fetch('/api/submit', {
         method: 'POST',
         body: formData,
       });
@@ -78,23 +116,23 @@
     <fieldset>
       <legend>あなたについて</legend>
       <label for='name'>お名前</label><br>
-      <input class='text' bind:value={username} id='name' type='text' placeholder='ニックネーム可' /><br>
+      <input class='text' bind:value={username} id='name' type='text' name='username' placeholder='ニックネーム可' /><br>
       <label for='email'>メールアドレス</label><br>
-      <input class='emailarea' type='email' id='email' placeholder='user@example.com' bind:value={email} />
+      <input class='emailarea' type='email' id='email' placeholder='user@example.com' name='email' bind:value={email} />
     </fieldset>
     <fieldset>
       <legend>{about}について</legend>
       {#if (aboutThis === 'book')}
         <p><RequiredMark />以下の中から，お読みになった，または現在お読みになっている部誌を全て選んでください．</p>
-        <input type="checkbox" id="ver1" name="ver" value="本篇・上巻" bind:group={alreadyRead}>
+        <input type="checkbox" id="ver1" name="alreadyRead" value="本篇・上巻" bind:group={alreadyRead}>
         <label for="ver1">本篇・上巻</label><br>
-        <input type="checkbox" id="ver2" name="ver" value="本編・下巻" bind:group={alreadyRead}>
+        <input type="checkbox" id="ver2" name="alreadyRead" value="本編・下巻" bind:group={alreadyRead}>
         <label for="ver2">本篇・下巻</label><br>
-        <input type="checkbox" id="ver3" name="ver" value="活動報告" bind:group={alreadyRead}>
+        <input type="checkbox" id="ver3" name="alreadyRead" value="活動報告" bind:group={alreadyRead}>
         <label for="ver3">活動報告</label><br><br>
       {:else if (aboutThis === 'planetarium')}
         <label for='length'><RequiredMark />プラネタリウムの時間（約10分）はいかがでしたか？</label><br>
-        <select id='name' bind:value={length}>
+        <select id='name' bind:value={length} name='length'>
           <option value=''>選択してください</option>
           <option value='too-short'>短すぎる</option>
           <option value='short'>少し短い</option>
@@ -131,7 +169,7 @@
     <fieldset>
       <legend>コメント</legend>
       <label for='comment'>ご意見・コメントなどをお書きください．</label><br>
-      <textarea placeholder='ここにコメントを入力' id='comment' bind:value={comment}></textarea>
+      <textarea placeholder='ここにコメントを入力' id='comment' name='comment' bind:value={comment}></textarea>
     </fieldset>
     <Turnstile siteKey='0x4AAAAAABycHtFvIrRAAG4r'/>
     <button type='submit'>送信</button>
