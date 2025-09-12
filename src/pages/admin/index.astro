@@ -1,12 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-
-import LoginPage from '../../components/admin/LoginPage.svelte';
 ---
 
 <Layout>
   <h2>管理ページ</h2>
-  <LoginPage client:load />
   <section>
     <h3><a href="/admin/form">アンケートを集計</a></h3>
     <h3><a href="/admin/ticket">チケットを管理</a></h3>
