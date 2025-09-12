@@ -24,5 +24,8 @@
   },
   "devDependencies": {
     "svelte-turnstile": "^0.11.0"
+  },
+  "engine": {
+    "node": "^18.12"
   }
 }
