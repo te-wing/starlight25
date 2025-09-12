@@ -174,6 +174,7 @@
     <Turnstile siteKey='0x4AAAAAABycHtFvIrRAAG4r'/>
     <button type='submit'>送信</button>
   </form>
+  <p>管理ページは<a href='/admin'>こちら</a></p>
 </div>
 
 <style lang='scss'>
