@@ -9,7 +9,7 @@
   const handleAuth = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      window.location.href = '/dash/loginComplete';
+      window.location.href = '/admin';
     } catch (error: any) {
       errorMessage = error.message;
       alert(`エラー: ${errorMessage}`);
