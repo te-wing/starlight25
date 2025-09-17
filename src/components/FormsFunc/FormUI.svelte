@@ -162,7 +162,11 @@
       <textarea placeholder='ここにコメントを入力' id='comment' name='comment' bind:value={comment}></textarea>
     </fieldset>
     <Turnstile siteKey='0x4AAAAAABycHtFvIrRAAG4r'/>
-    <button type='submit'>送信</button>
+    <div class='submitButtonBoxForLayout'>
+      <button class='submitButton' type='submit'>
+        送信
+      </button>
+    </div>
   </form>
   <p>管理ページは<a href='/admin'>こちら</a></p>
 </div>
@@ -205,5 +209,21 @@
 
   legend {
     font-family: Sawarabi;
+  }
+
+  .submitButton {
+    font-family: ZenMaru;
+    text-align: center;
+    
+    width: 77px;
+    font-size: 0.88em;
+  }
+
+  .submitButtonBoxForLayout {
+    width: 100%;
+    display: flex;
+    
+    align-items: center;
+
   }
 </style>
