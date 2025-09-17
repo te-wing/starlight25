@@ -4,7 +4,11 @@
 
 <div>
   <form>
-    <input class='timeInput' type='time'>
+    <input
+      class='timeInput'
+      type='time'
+      value='09:00'
+    >
   </form>
 </div>
 
