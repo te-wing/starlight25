@@ -111,7 +111,6 @@
   <p>「<RequiredMark />」がついている項目は回答必須，その他の項目は任意です．</p>
 
   <form on:submit={handleSubmit}>
-    
     <fieldset>
       <legend>{about}について</legend>
       {#if (aboutThis === 'book')}
@@ -135,7 +134,6 @@
       {:else}
         <a href='/error'>エラー</a>
       {/if}
-      <br>
       <p><RequiredMark />{about}の内容はいかがでしたか？</p>
       <label>
         <input bind:group={rate} type='radio' name='rate' value={1} />
