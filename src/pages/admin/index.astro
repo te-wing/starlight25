@@ -5,10 +5,15 @@ import AccountWidget from '../../components/admin/AccountWidget.svelte';
 ---
 
 <Layout>
-  <h2>管理ページ</h2>
-  <AccountWidget client:load />
   <section>
-    <h3><a href="/admin/form">アンケートを集計</a></h3>
-    <h3><a href="/admin/ticket">チケットを管理</a></h3>
+    <head>
+      <title>Admin | The Scientific Seiko ID</title>
+    </head>
+    <h2>管理ページ</h2>
+    <AccountWidget client:load />
+    <section>
+      <h3><a href="/admin/form">アンケートを集計</a></h3>
+      <h3><a href="/admin/ticket">チケットを管理</a></h3>
+    </section>
   </section>
 </Layout>
