@@ -9,8 +9,6 @@
   let 説明文: string = '';
   let other: string = '';
 
-  let username: string = '';
-  let email: string = '';
   let comment: string = '';
   let rate: IntegerFrom0To5 = 0;
   let length: string = '';
@@ -113,13 +111,7 @@
   <p>「<RequiredMark />」がついている項目は回答必須，その他の項目は任意です．</p>
 
   <form on:submit={handleSubmit}>
-    <fieldset>
-      <legend>あなたについて</legend>
-      <label for='name'>お名前</label><br>
-      <input class='text' bind:value={username} id='name' type='text' name='username' placeholder='ニックネーム可' /><br>
-      <label for='email'>メールアドレス</label><br>
-      <input class='emailarea' type='email' id='email' placeholder='user@example.com' name='email' bind:value={email} />
-    </fieldset>
+    
     <fieldset>
       <legend>{about}について</legend>
       {#if (aboutThis === 'book')}
