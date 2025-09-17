@@ -4,7 +4,7 @@
 
 <div>
   <form>
-    <input class='timeInput' type='time' placeholder="22:02">
+    <input class='timeInput' type='time'>
   </form>
 </div>
 
