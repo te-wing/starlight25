@@ -3,6 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 
 import BackToTop from "../../components/admin/BackToTop.astro";
 import AccountWidget from '../../components/admin/AccountWidget.svelte';
+
+import TicketList from '../../components/admin/TicketsFunc/TicketList.svelte';
 ---
 
 <Layout>
@@ -13,5 +15,7 @@ import AccountWidget from '../../components/admin/AccountWidget.svelte';
     <BackToTop client:load />
     <h2>チケット管理</h2>
     <AccountWidget client:load />
+    <h3>チケット一覧</h3>
+    <TicketList client:load />
   </section>
 </Layout>

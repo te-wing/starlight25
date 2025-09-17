@@ -1,0 +1,16 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+import AddTime from '../../../components/admin/TicketsFunc/AddTime.svelte';
+---
+
+<Layout>
+  <section>
+    <head>
+      <title>時間帯を追加 - Admin | THe Scientific Seiko</title>
+    </head>
+    <div>
+      <AddTime client:load />
+    </div>
+  </section>
+</Layout>
