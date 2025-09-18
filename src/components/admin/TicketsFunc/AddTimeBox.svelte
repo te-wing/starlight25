@@ -1,5 +1,6 @@
 <script lang="ts">
-
+  import { db } from '../../../firebase/client';
+  
 </script>
 
 <div>
@@ -9,7 +10,9 @@
       value='05:00'
     >
   </form>
-  <button type='submit'>追加</button>
+  <button type='submit'>
+    追加
+  </button>
 </div>
 
 <style lang="scss">
