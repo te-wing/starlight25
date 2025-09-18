@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -13,13 +13,16 @@ const firebaseConfig = {
   projectId: "sf25-tenmon",
   storageBucket: "sf25-tenmon.firebasestorage.app",
   messagingSenderId: "849951922230",
-  appId: "1:849951922230:web:1d30292956eebecb102097"
+  appId: "1:849951922230:web:1d30292956eebecb102097",
+  databaseURL: "https://sf25-tenmon-ticket-management.asia-southeast1.firebasedatabase.app"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = getApps().length === 0
+  ? initializeApp(firebaseConfig)
+  : getApp();
 
 const auth = getAuth(app);
-const db = getDatabase();
+const database = getDatabase(app);
 
-export { auth, db };
+export { auth, database };
