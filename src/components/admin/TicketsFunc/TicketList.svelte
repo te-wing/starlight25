@@ -27,26 +27,36 @@
 </script>
 
 <div>
-  {#each Object.keys(slots).sort() as time}
-    <div>
-      <span>{time}</span>
-      <button
-        on:click={() => deleteSlot(time)}
-      >
-        削除
-      </button>
-    </div>
-  {/each}
-
-  <div>
-    <input
-      placeholder='例：09:00'
-      bind:value={newTime}
-    />
-    <button
-      on:click={addSlot}
-    >
-      ＋追加
-    </button>
-  </div>
+  <table>
+    <thead></thead>
+    <tbody>
+      {#each Object.keys(slots).sort() as time}
+        <tr>
+          <td>{time}</td>
+          <td>
+            <button
+              on:click={() => deleteSlot(time)}
+            >
+            ー削除
+          </button>
+          </td>
+        </tr>
+      {/each}
+      <tr>
+        <td>
+          <input
+            placeholder='例：09:00'
+            bind:value={newTime}
+          />
+        </td>
+        <td>
+          <button
+            on:clicl={addSlot}
+          >
+            ＋追加
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
