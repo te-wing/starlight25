@@ -1,11 +1,10 @@
-<script>
-  import { ref, onValue, set } from "firebase/database";
+<script lang="js">
+  import { ref, onValue, set, runTransaction } from "firebase/database";
   import { database } from "../../../firebase/client";
-  import { v4 as uuidv4 } from "uuid"; // 時間キー用にユニークIDもあり
 
   let slots = {};
 
-  // Realtime Databaseから時間枠を取得
+  // DBから時間枠を購読
   const slotsRef = ref(database, "reservations");
   onValue(slotsRef, (snapshot) => {
     slots = snapshot.val() || {};
@@ -24,48 +23,49 @@
     const slotRef = ref(database, `reservations/${time}`);
     set(slotRef, null);
   }
+
+  function updateCount(time, delta) {
+    const countRef = ref(database, `reservations/${time}/count`);
+    runTransaction(countRef, (current) => {
+      return Math.max(0, (current || 0) + delta); // マイナス防止
+    });
+  }
 </script>
 
 <div>
   <table>
-    <thead></thead>
+    <thead>
+      <tr>
+        <th>時間</th>
+        <th colspan="3">予約数</th>
+        <th>操作</th>
+      </tr>
+    </thead>
     <tbody>
       {#each Object.keys(slots).sort() as time}
         <tr>
           <td>{time}</td>
           <td>
-            <button>
-              ー
-            </button>
+            <button on:click={() => updateCount(time, -1)}>ー</button>
           </td>
-          <td>人数</td>
+          <td>{slots[time]?.count ?? 0}</td>
           <td>
-            <button>
-              ＋
-            </button>
+            <button on:click={() => updateCount(time, +1)}>＋</button>
           </td>
           <td>
-            <button
-              on:click={() => deleteSlot(time)}
-            >
-            削除
-          </button>
+            <button on:click={() => deleteSlot(time)}>削除</button>
           </td>
         </tr>
       {/each}
       <tr>
-        <td>
+        <td colspan="4">
           <input
-            placeholder='例：09:00'
+            placeholder="例：09:00"
             bind:value={newTime}
           />
         </td>
         <td>
-          <button
-            on:clicl={addSlot}
-          >
-            追加
-          </button>
+          <button on:click={addSlot}>追加</button>
         </td>
       </tr>
     </tbody>
