@@ -1,14 +1,8 @@
-# Astro Starter Kit: Basics
+# starlight25 リポジトリ
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+## ディレクトリ構造
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+ファイルはこのように配置しましょう．
 
 ```text
 /
@@ -26,11 +20,11 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+ディレクトリ構造についてもっと調べるには， [このサイト](https://docs.astro.build/en/basics/project-structure/)をチェック．
 
-## 🧞 Commands
+## 主要なコマンド
 
-All commands are run from the root of the project, from a terminal:
+開発環境を設定する時に，VS CodeまたはUnixターミナルでこのコマンドを実行しましょう．
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -41,6 +35,3 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
