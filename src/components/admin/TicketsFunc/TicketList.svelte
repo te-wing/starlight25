@@ -37,7 +37,7 @@
             <button
               on:click={() => deleteSlot(time)}
             >
-            ー削除
+            削除
           </button>
           </td>
         </tr>
@@ -53,7 +53,7 @@
           <button
             on:clicl={addSlot}
           >
-            ＋追加
+            追加
           </button>
         </td>
       </tr>
