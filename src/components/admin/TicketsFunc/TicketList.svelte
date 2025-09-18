@@ -34,6 +34,17 @@
         <tr>
           <td>{time}</td>
           <td>
+            <button>
+              ー
+            </button>
+          </td>
+          <td>人数</td>
+          <td>
+            <button>
+              ＋
+            </button>
+          </td>
+          <td>
             <button
               on:click={() => deleteSlot(time)}
             >
