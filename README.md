@@ -33,10 +33,7 @@
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
+| `pnpm install`             | 依存関係をインストール．とにかく最初に一度だけこのコードを実行しよう．|
+| `pnpm dev`             | このURL「`localhost:4321`」で開発サーバーを立ち上げます．サイトがプレビューできるということです．このコードを実行しても，インターネットには公開されません．|
+| `pnpm astro ...`       | ターミナル上で`astro add`でフレームワークを追加したり，`astro check`のように便利機能を使えます． |
+| `pnpm astro -- --help` | 助けて欲しい時はコレ！ |
