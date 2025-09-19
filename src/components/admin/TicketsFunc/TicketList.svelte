@@ -10,13 +10,13 @@
     slots = snapshot.val() || {};
   });
 
-  let newTime = "";
+  let newTime = "08:00";
 
   function addSlot() {
     if (!newTime) return;
     const slotRef = ref(database, `reservations/${newTime}`);
     set(slotRef, { count: 0 });
-    newTime = "";
+    newTime = '08:00';
   }
 
   function deleteSlot(time) {
@@ -73,7 +73,8 @@
       <tr>
         <td colspan="5">
           <input
-            placeholder="例：09:00"
+            type=time
+            class='timeInput'
             bind:value={newTime}
           />
         </td>
@@ -84,3 +85,14 @@
     </tbody>
   </table>
 </div>
+
+<style lang="scss">
+  .timeInput {
+    font-size: 16px;
+    font-family: ZenMaru;
+  }
+  button {
+    font-size: 15px;
+    font-family: ZenMaru;
+  }
+</style>
