@@ -16,12 +16,16 @@
   let hours = '';
   let minutes = '';
   let seconds = '';
+  let currentTimeOnHhMm = '';
+  let currentTimeOnHhMmSs = '';
 
   function displayCurrentTime() {
     now = new Date();
     hours = now.getHours();
     minutes = now.getMinutes();
     seconds = now.getSeconds();
+    currentTimeOnHhMm = `${hours}:${minutes}`;
+    currentTimeOnHhMmSs = `${currentTimeOnHhMm}:${seconds}`;
   }
 
   setInterval(displayCurrentTime, 1000);
@@ -51,7 +55,7 @@
 
 <div>
   <h4>空き枠のある時間帯</h4>
-  <p>現在の時間：{hours}:{minutes}:{seconds}</p>
+  <p>現在の時間：{currentTimeOnHhMmSs}</p>
   <h4>予約数一覧</h4>
   <table>
     <thead>
