@@ -51,11 +51,34 @@
       return Math.max(0, (current || 0) + delta); // マイナス防止
     });
   }
+
+  // HH:MM を数値（分単位）に変換
+  function toMinutes(timeStr) {
+    const [h, m] = timeStr.split(":").map(Number);
+    return h * 60 + m;
+  }
+
+  // 「今の時間以降」「人数3以下」で最も早い時間を返す
+  function nextAvailableSlot(threshold = 3) {
+    const now = toMinutes(currentTimeOnHhMm);
+
+    const candidates = Object.entries(slots)
+      .filter(([time, data]) => {
+        return (
+          toMinutes(time) >= now && (data.count ?? 0) <= threshold
+        );
+      })
+      .map(([time]) => time)
+      .sort((a, b) => toMinutes(a) - toMinutes(b));
+
+    return candidates[0] || null; // なければ null
+  }
 </script>
 
 <div>
   <h4>空き枠のある時間帯</h4>
   <p>現在の時間：{currentTimeOnHhMmSs}</p>
+  <p>次の空き時間：{nextAvailableSlot(3) ?? "該当なし"}</p>
   <h4>予約数一覧</h4>
   <table>
     <thead>
