@@ -41,6 +41,7 @@
       <tr>
         <th>時間</th>
         <th colspan="3">予約数</th>
+        <th>混雑状況</th>
         <th>操作</th>
       </tr>
     </thead>
@@ -56,12 +57,21 @@
             <button on:click={() => updateCount(time, +1)}>＋</button>
           </td>
           <td>
+            {#if (slots[time]?.count >= 13)}
+              ×
+            {:else if (slots[time]?.count >= 9)}
+              △
+            {:else}
+              ◯
+            {/if}
+          </td>
+          <td>
             <button on:click={() => deleteSlot(time)}>削除</button>
           </td>
         </tr>
       {/each}
       <tr>
-        <td colspan="4">
+        <td colspan="5">
           <input
             placeholder="例：09:00"
             bind:value={newTime}
