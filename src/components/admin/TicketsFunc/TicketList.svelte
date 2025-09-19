@@ -12,6 +12,20 @@
 
   let newTime = "08:00";
 
+  let now = '';
+  let hours = '';
+  let minutes = '';
+  let seconds = '';
+
+  function displayCurrentTime() {
+    now = new Date();
+    hours = now.getHours();
+    minutes = now.getMinutes();
+    seconds = now.getSeconds();
+  }
+
+  setInterval(displayCurrentTime, 1000);
+
   function addSlot() {
     if (!newTime) return;
     const slotRef = ref(database, `reservations/${newTime}`);
@@ -37,7 +51,7 @@
 
 <div>
   <h4>空き枠のある時間帯</h4>
-  <p>現在の時間：</p>
+  <p>現在の時間：{hours}:{minutes}:{seconds}</p>
   <h4>予約数一覧</h4>
   <table>
     <thead>
