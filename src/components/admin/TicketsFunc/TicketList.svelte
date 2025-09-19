@@ -20,9 +20,11 @@
   }
 
   function deleteSlot(time) {
-    const continueChoice = confirm(`${time}この枠を削除しますか？`)
-    const slotRef = ref(database, `reservations/${time}`);
-    set(slotRef, null);
+    const continueChoice = confirm(`${time}の枠を削除しますか？`)
+    if (continueChoice) {
+      const slotRef = ref(database, `reservations/${time}`);
+      set(slotRef, null);
+    }
   }
 
   function updateCount(time, delta) {
@@ -76,6 +78,7 @@
           <input
             type=time
             class='timeInput'
+            step="300"
             bind:value={newTime}
           />
         </td>
