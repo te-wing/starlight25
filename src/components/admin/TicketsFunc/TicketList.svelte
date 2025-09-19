@@ -20,6 +20,7 @@
   }
 
   function deleteSlot(time) {
+    const continueChoice = confirm(`${time}この枠を削除しますか？`)
     const slotRef = ref(database, `reservations/${time}`);
     set(slotRef, null);
   }
