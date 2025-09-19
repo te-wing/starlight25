@@ -19,13 +19,18 @@
   let currentTimeOnHhMm = '';
   let currentTimeOnHhMmSs = '';
 
+  function padZero(num) {
+    return String(num).padStart(2, "0");
+  }
+
   function displayCurrentTime() {
     now = new Date();
-    hours = now.getHours();
-    minutes = now.getMinutes();
-    seconds = now.getSeconds();
+    hours = padZero(now.getHours());
+    minutes = padZero(now.getMinutes());
+    seconds = padZero(now.getSeconds());
+
     currentTimeOnHhMm = `${hours}:${minutes}`;
-    currentTimeOnHhMmSs = `${currentTimeOnHhMm}:${seconds}`;
+    currentTimeOnHhMmSs = `${hours}:${minutes}:${seconds}`;
   }
 
   setInterval(displayCurrentTime, 1000);
