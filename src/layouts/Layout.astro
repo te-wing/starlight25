@@ -33,6 +33,10 @@ const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={正規URL} />
 
+    <!-- アイコン -->
+    <link rel="apple-touch-icon" href="/hotlink-ok/tenmonLogo.png" />
+    <link rel="icon" href='/hotlink-ok/tenmonLogo.png' />
+
     <ClientRouter />
   </head>
   <body>
