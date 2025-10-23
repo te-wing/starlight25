@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 
 import cloudflare from '@astrojs/cloudflare';
 
@@ -12,5 +12,14 @@ import vue from '@astrojs/vue';
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
+  site: 'https://starlight25.pages.dev',
+  trailingSlash: 'always',
+  compressHTML: true,
+  build: {
+    format: 'directory',
+  },
+  image: {
+    service: passthroughImageService(),
+  },
   integrations: [svelte(), sitemap(), react(), vue()],
 });
