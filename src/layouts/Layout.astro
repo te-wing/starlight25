@@ -1,6 +1,6 @@
 ---
 import Header from '../components/layoutFunc/Header.astro';
-import Footer from '../components/layoutFunc/Footer.svelte';
+import Footer from '../components/layoutFunc/Footer.astro';
 import { ClientRouter } from 'astro:transitions';
 ---
 
@@ -17,7 +17,7 @@ import { ClientRouter } from 'astro:transitions';
   <body>
     <Header />
     <slot transition:animate=slide />
-    <Footer client:load />
+    <Footer />
   </body>
 </html>
 

@@ -1,0 +1,22 @@
+---
+const buildYear = new Date().getFullYear();
+---
+
+<footer>
+  <p>The Scientific Seikoをご覧いただき，ありがとうございます．</p>
+  <p>&copy; {buildYear} 大阪星光学院天文部</p>
+</footer>
+
+<style lang="scss">
+  footer {
+    --shadow: #fffff155;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0px -4px 3px var(--shadow);
+    margin: auto 0;
+    width: 100vw;
+    p {
+      margin: 2px auto;
+    }
+  }
+</style>
