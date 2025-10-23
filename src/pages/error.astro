@@ -2,15 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-  <div>
-    <head>
-      <title>エラー | The Scientific Seiko 2025</title>
-      <meta name="robots" content="noindex" />
-    </head>
-    <section>
-      <h2>エラーが発生しました．</h2>
-      <p>詳細は，サイト管理者にお問い合わせください．</p>
-    </section>
-  </div>
+<Layout
+  title="エラー | The Scientific Seiko"
+  description="エラーが発生しました．"
+  noindex={true}
+>
+  <h1>エラーが発生しました．</h1>
+  <p>詳細は，サイト管理者にお問い合わせください．</p>  
 </Layout>

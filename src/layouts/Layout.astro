@@ -69,10 +69,6 @@ const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
     padding: 0;
   }
 
-  .slot {
-    min-height: 200px;
-  }
-
   @font-face {
     font-family: BizUDMincho;
     src: url('/fonts/BizUD.ttf');
@@ -103,8 +99,12 @@ const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
     src: url('/fonts/ZenMaru.ttf');
   }
 
-  h2, h3, h4, strong {
+  h1, h2, h3, h4, strong {
     font-family: Sawarabi;
+  }
+
+  h1 {
+    text-align: center;
   }
 </style>
 
@@ -112,6 +112,11 @@ const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
   body {
     max-width: 1200px;
     padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .slot {
+    min-height: 200px;
+    margin: auto 20px;
     box-sizing: border-box;
   }
 </style>
