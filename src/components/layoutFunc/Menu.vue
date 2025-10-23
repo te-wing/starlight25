@@ -14,13 +14,10 @@
     >
       <ul>
         <li>
-          <a href="/">ホーム</a>
+          <a href="/">ホーム・部誌一覧</a>
           <ul>
             <li><a href="/search/">検索</a></li>
           </ul>
-        </li>
-        <li>
-          <a href="/book/">部誌</a>
         </li>
         <li>
           <a>アンケート</a>
@@ -28,6 +25,9 @@
             <li><a href='/form/'>部誌のアンケート</a></li>
             <li><a href='/form/planetarium/'>プラネタリウムのアンケート</a></li>
           </ul>
+        </li>
+        <li>
+          <a href="/admin/">管理ページ</a>
         </li>
       </ul>
     </nav>
