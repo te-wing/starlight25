@@ -7,15 +7,12 @@ import AccountWidget from '../../components/admin/AccountWidget.svelte';
 import TicketList from '../../components/admin/TicketsFunc/TicketList.svelte';
 ---
 
-<Layout>
-  <section>
-    <head>
-      <title>チケット管理 Admin | The Scientific Seiko</title>
-    </head>
-    <BackToTop client:load />
-    <h2>チケット管理</h2>
-    <AccountWidget client:load />
-    <h3>チケット一覧</h3>
-    <TicketList client:load />
-  </section>
+<Layout
+  title="チケット管理 - Admin | The Scientific Seiko 2025"
+>
+  <BackToTop client:load />
+  <h2>チケット管理</h2>
+  <AccountWidget client:load />
+  <h3>チケット一覧</h3>
+  <TicketList client:load />
 </Layout>
