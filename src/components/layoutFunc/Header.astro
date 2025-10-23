@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import tenmonStamp from '../../images/tenmonStamp.png';
+import Menu from './Menu.vue';
 ---
 
 <header>
@@ -8,9 +9,7 @@ import tenmonStamp from '../../images/tenmonStamp.png';
     <Image class="headerImg" src={tenmonStamp} alt="天文部スタンプ" width={40} />
     <p>The Scientific Seiko</p>
   </a>
-  <noscript>
-    <p>JavaScriptが無効です．サイト内の一部機能が制限される場合があります．</p>
-  </noscript>
+  <Menu client:load />
 </header>
 
 <style lang='scss'>
