@@ -5,7 +5,7 @@ import tenmonStamp from '../../images/tenmonStamp.png';
 
 <header>
   <a href="/">
-    <Image src={tenmonStamp} alt="天文部スタンプ" width={40} />
+    <Image class="headerImg" src={tenmonStamp} alt="天文部スタンプ" width={40} />
     <p>The Scientific Seiko</p>
   </a>
   <noscript>
@@ -28,6 +28,11 @@ import tenmonStamp from '../../images/tenmonStamp.png';
     a {
       display: flex;
       flex-direction: row;
+      &:hover {
+        .headerImg {
+          opacity: 0.7;
+        }
+      }
       p {
         margin: 0;
         font-family: 'EpItalic';
