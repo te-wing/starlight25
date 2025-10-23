@@ -13,6 +13,7 @@
     "@astrojs/react": "^4.3.0",
     "@astrojs/sitemap": "^3.5.1",
     "@astrojs/svelte": "^7.1.0",
+    "@astrojs/vue": "^5.1.1",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
     "astro": "^5.13.4",
@@ -22,7 +23,8 @@
     "sass": "^1.89.2",
     "svelte": "^5.38.6",
     "typescript": "^5.9.2",
-    "uuid": "^13.0.0"
+    "uuid": "^13.0.0",
+    "vue": "^3.5.22"
   },
   "devDependencies": {
     "svelte-turnstile": "^0.11.0"
