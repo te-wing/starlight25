@@ -1,9 +1,11 @@
 ---
-
+import { Image } from 'astro:assets';
+import tenmonStamp from '../../images/tenmonStamp.png';
 ---
 
 <header>
   <a href="/">
+    <Image src={tenmonStamp} alt="天文部スタンプ" width={40} />
     <p>The Scientific Seiko</p>
   </a>
   <noscript>
@@ -24,6 +26,8 @@
     justify-content: space-between;
 
     a {
+      display: flex;
+      flex-direction: row;
       p {
         margin: 0;
         font-family: 'EpItalic';
