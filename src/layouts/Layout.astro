@@ -22,7 +22,47 @@ import { ClientRouter } from 'astro:transitions';
 </html>
 
 <style is:global>
-  @import '../styles/globals.scss';
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: ZenMaru;
+  }
+
+  @font-face {
+    font-family: BizUDMincho;
+    src: url('/fonts/BizUD.ttf');
+  }
+
+  @font-face {
+    font-family: EpItalic;
+    src: url('/fonts/EpItalic.ttf');
+  }
+
+  @font-face {
+    font-family: EpNormal;
+    src: url('/fonts/EpN.ttf');
+  }
+
+  @font-face {
+    font-family: Sawarabi;
+    src: url('/fonts/Sawarabi.ttf');
+  }
+
+  @font-face {
+    font-family: FiraCode;
+    src: url('/fonts/FiraCode.ttf');
+  }
+
+  @font-face {
+    font-family: ZenMaru;
+    src: url('/fonts/ZenMaru.ttf');
+  }
+
+  h2, h3, h4, strong {
+    font-family: Sawarabi;
+  }
 </style>
 
 <style lang="scss">
