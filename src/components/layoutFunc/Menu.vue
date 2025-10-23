@@ -16,13 +16,14 @@
         <li>
           <a href="/">ホーム</a>
           <ul>
-            <li><a href="/profile/">自己紹介</a></li>
-            <li><a>特技</a></li>
-            <li><a href="/contact/">連絡先</a></li>
+            <li><a href="/search/">検索</a></li>
           </ul>
         </li>
         <li>
-          <p>アンケート</p>
+          <a href="/book/">部誌</a>
+        </li>
+        <li>
+          <a>アンケート</a>
           <ul>
             <li><a href='/form/'>部誌のアンケート</a></li>
             <li><a href='/form/planetarium/'>プラネタリウムのアンケート</a></li>
