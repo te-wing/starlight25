@@ -21,6 +21,13 @@
             <li><a href="/contact/">連絡先</a></li>
           </ul>
         </li>
+        <li>
+          <p>アンケート</p>
+          <ul>
+            <li><a href='/form/'>部誌のアンケート</a></li>
+            <li><a href='/form/planetarium/'>プラネタリウムのアンケート</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
     <div v-if="isOpen" class="overlay" @click="toggleMenu"></div>
