@@ -10,6 +10,7 @@ const bookCollection = defineCollection({
     kind: z.string(),
     bookVer: z.string(),
     pageNo: z.number(),
+    pageId: z.number(),
   }),
 });
 
