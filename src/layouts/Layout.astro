@@ -48,7 +48,37 @@ const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
   </body>
 </html>
 
-<style is:global>
+<style is:global lang="scss">
+  .bookListSlot {
+    list-style: none;
+    padding: 0;
+    li {
+      border: 1px solid var(--foreground);
+      padding: 10px;
+      border-radius: 24px 10px;
+      p {
+        text-decoration: none;
+        div {
+          display: flex;
+          a, p, h2 {
+            margin: 0 2px;
+            padding: 0;
+          }
+          p {
+            color: var(--foreground);
+          }
+        }
+        &:hover {
+          h2 {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+</style>
+
+<style is:global lang="scss">
   :root {
     --background: rgb(25, 33, 60);
     --foreground: white;
