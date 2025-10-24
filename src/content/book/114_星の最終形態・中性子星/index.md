@@ -44,8 +44,8 @@ X字型に1本3kmのアームを用意し、二本のアームが交わる場所
 
 ## 参考文献
 - [Wikipedia](https://ja.wikipedia.org/)
-- https://gwpo.nao.ac.jp/about_gw/
-- https://astro-dic.jp/pulsar/
-- https://www.u-tokyo.ac.jp/focus/ja/articles/a_00269.html
-- https://gwpo.nao.ac.jp/news/000034.html
-- https://gwcenter.icrr.u-tokyo.ac.jp/
+- [重力波とは ｜ 国立天文台 重力波プロジェクト](https://gwpo.nao.ac.jp/about_gw/)
+- [パルサー | 天文学辞典](https://astro-dic.jp/pulsar/)
+- [宇宙で最強な磁石天体が、磁力でわずかに変形している兆候を発見 | 東京大学](https://www.u-tokyo.ac.jp/focus/ja/articles/a_00269.html)
+- [連星中性子星合体からの重力波が初検出されました ｜ ニュース ｜ 国立天文台 重力波プロジェクト](https://gwpo.nao.ac.jp/news/000034.html)
+- [KAGRA 大型低温重力波望遠鏡 – KAGRA 大型低温重力波望遠鏡のホームページです。](https://gwcenter.icrr.u-tokyo.ac.jp/)
