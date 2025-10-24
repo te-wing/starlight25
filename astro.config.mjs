@@ -9,6 +9,8 @@ import react from '@astrojs/react';
 
 import vue from '@astrojs/vue';
 
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
@@ -21,5 +23,5 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
-  integrations: [svelte(), sitemap(), react(), vue()],
+  integrations: [svelte(), sitemap(), react(), vue(), mdx()],
 });
