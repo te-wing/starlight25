@@ -1,8 +1,26 @@
 ---
-
+import pkg from 'react-katex';
+const { InlineMath, BlockMath } = pkg;
 ---
 
 <div>
   <h3>ドレイクの式</h3>
-  
+  <p><InlineMath math="N" />：銀河系内での文明が存在する惑星の数</p>
+  <BlockMath math="N = R \\cdot f_p \\cdot n_e \\cdot f_l \\cdot f_i \\cdot f_c \\cdot L" />
+  <p>
+    <InlineMath math="R"/>：銀河系で１年間に誕生する星の数<br/>
+    <InlineMath math="f_p" />：誕生した恒星が惑星を持つ確率<br/>
+    <InlineMath math="n_e"/>：恒星系の中で地球のような環境の惑星の数<br/>
+    <InlineMath math="f_l"/>：惑星の中で生命が発生する確率<br/>
+    <InlineMath math="f_i"/>：発生した生命が知性を持つ確率<br/>
+    <InlineMath math="f_c"/>：知的生命が高度な技術文明を持つ確率<br/>
+    <InlineMath math="L"/>：その文明の寿命<br/>
+  </p>
 </div>
+
+<style lang="scss">
+  div {
+    text-align: center;
+    border: 1px solid var(--foreground);
+  }
+</style>

@@ -26,7 +26,7 @@ export default defineConfig({
   },
   integrations: [svelte(), sitemap(), react(), vue(), mdx()],
   markdown: {
-    remarkplugins: [remarkMath],
+    remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],
   },
 });
