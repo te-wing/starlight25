@@ -80,6 +80,17 @@ const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
 </style>
 
 <style is:global lang="scss">
+  .mdxSection {
+    figure {
+      width: 100%;
+      text-align: center;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
   .noUnderline {
     a {
       text-decoration: none;
