@@ -15,7 +15,9 @@ const { entry } = Astro.props;
 const { Content } = await render( entry );
 ---
 
-<Layout>
+<Layout
+  title=`${entry.data.title} | The Scientific Seiko 2025`
+>
   <BackToList />
   <h1>{entry.data.title}</h1>
   <div class="subText">
