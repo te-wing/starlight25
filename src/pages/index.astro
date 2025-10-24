@@ -19,7 +19,7 @@ const bookEntries = await getCollection("book");
       <li>
         <a href={`/book/${bookEntry.slug}/`}>
           <div>
-            <p>{bookEntry.data.pageNo}</p>
+            <p>{bookEntry.data.bookVer} p.{bookEntry.data.pageNo}，</p>
             <p>{bookEntry.data.kind}</p>
           </div>
           <div>
