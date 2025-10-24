@@ -14,7 +14,7 @@ const bookEntries = await getCollection("book");
     大阪星光学院天文部の部誌「The Scientific Seiko 2025」のウェブ版です．<br />
     著作権等の関係や，プライバシー保護のため，SF当日に配布した紙のバージョンとは一部が異なります．
   </p>
-  <ul>
+  <ul class="bookListSlot">
     {bookEntries.map(bookEntry => (
       <li>
         <a href={`/book/${bookEntry.slug}/`}>
