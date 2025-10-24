@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const bookEntries = await getCollection('book');
+  return bookEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props;
+const { Content } = await render( entry );
+---
+
+<Layout>
+  <h1>{entry.data.title}</h1>
+  <div class="subText">
+    <p>{entry.data.pageNo}，{entry.data.kind}</p>
+    <p>著者：{entry.data.authorInitial}</p>
+  </div>
+  <Content />
+</Layout>
+
+<style lang="scss">
+  .subText {
+    opacity: 0.8;
+    text-align: center;
+  }
+</style>
