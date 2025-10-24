@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const allEntries = await getCollection('book');
+
+  const uniqueKind = [...new Set(allEntries.map((entry) => entry.data.kind))];
+
+  return uniqueKind.map((kind) => {
+    const entries = allEntries.filter((entry) => entry.data.kind === kind);
+
+    return {
+      params: {kind: kind},
+      props: {kind: kind, entries: entries}
+    };
+  });
+};
+
+const { kind, entries } = Astro.props;
+
+const filteredEntries = await getCollection('book', ({ data }) => {
+  return data.kind === kind;
+});
+---
+
+<Layout>
+  <h1>{kind}</h1>
+  <ul class="bookListSlot">
+    {filteredEntries.map(bookEntry => (
+      <li>
+        <p>
+          <div>
+            <p>{bookEntry.data.bookVer} p.{bookEntry.data.pageNo}，{bookEntry.data.kind}</p>
+          </div>
+          <div>
+            <a href=`/book/${bookEntry.slug}/` >
+              <h2>{bookEntry.data.title}</h2>
+            </a>
+          </div>
+          <div>
+            <p>{bookEntry.data.authorInitial}</p>
+          </div>
+        </p>
+      </li>
+    ))}
+  </ul>
+</Layout>
