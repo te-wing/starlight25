@@ -21,6 +21,8 @@
     "firebase": "^12.2.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "sass": "^1.89.2",
     "svelte": "^5.38.6",
     "typescript": "^5.9.2",

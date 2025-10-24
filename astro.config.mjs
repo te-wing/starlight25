@@ -1,6 +1,7 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
 
-import cloudflare from '@astrojs/cloudflare';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 import svelte from '@astrojs/svelte';
 import sitemap from '@astrojs/sitemap';
@@ -24,4 +25,8 @@ export default defineConfig({
     service: passthroughImageService(),
   },
   integrations: [svelte(), sitemap(), react(), vue(), mdx()],
+  markdown: {
+    remarkplugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
+  },
 });
