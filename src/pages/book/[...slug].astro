@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import BackToList from "../../components/layoutFunc/BackToList.astro";
 
 export async function getStaticPaths() {
   const bookEntries = await getCollection('book');
@@ -15,6 +16,7 @@ const { Content } = await render( entry );
 ---
 
 <Layout>
+  <BackToList />
   <h1>{entry.data.title}</h1>
   <div class="subText">
     <p>

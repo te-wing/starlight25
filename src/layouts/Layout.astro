@@ -67,10 +67,10 @@ const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
           p {
             color: var(--foreground);
           }
-        }
-        &:hover {
-          h2 {
-            text-decoration: underline;
+          &:hover {
+            h2 {
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -79,6 +79,15 @@ const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
 </style>
 
 <style is:global lang="scss">
+  .noUnderline {
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
   :root {
     --background: rgb(25, 33, 60);
     --foreground: white;

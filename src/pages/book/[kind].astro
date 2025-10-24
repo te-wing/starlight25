@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from '../../layouts/Layout.astro';
+import BackToList from '../../components/layoutFunc/BackToList.astro';
 
 export async function getStaticPaths() {
   const allEntries = await getCollection('book');
@@ -17,7 +18,7 @@ export async function getStaticPaths() {
   });
 };
 
-const { kind, entries } = Astro.props;
+const { kind } = Astro.props;
 
 const filteredEntries = await getCollection('book', ({ data }) => {
   return data.kind === kind;
@@ -25,13 +26,14 @@ const filteredEntries = await getCollection('book', ({ data }) => {
 ---
 
 <Layout>
-  <h1>{kind}</h1>
+  <BackToList />
+  <h1>{kind}の記事</h1>
   <ul class="bookListSlot">
     {filteredEntries.map(bookEntry => (
       <li>
         <p>
-          <div>
-            <p>{bookEntry.data.bookVer} p.{bookEntry.data.pageNo}，{bookEntry.data.kind}</p>
+          <div class="noUnderline">
+            <p><a href=`/book/${bookEntry.data.bookVer}/` >{bookEntry.data.bookVer}</a> p.{bookEntry.data.pageNo}，{bookEntry.data.kind}</p>
           </div>
           <div>
             <a href=`/book/${bookEntry.slug}/` >

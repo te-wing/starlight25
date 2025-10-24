@@ -16,8 +16,8 @@ const bookEntries = await getCollection("book");
     {bookEntries.map(bookEntry => (
       <li>
         <p>
-          <div>
-            <p><a href=`/book/${bookEntry.data.bookVer}/` >{bookEntry.data.bookVer}</a> p.{bookEntry.data.pageNo}，{bookEntry.data.kind}</p>
+          <div class="noUnderline">
+            <p><a href=`/book/${bookEntry.data.bookVer}/` >{bookEntry.data.bookVer}</a> p.{bookEntry.data.pageNo}，<a href=`/book/${bookEntry.data.kind}/` >{bookEntry.data.kind}</a></p>
           </div>
           <div>
             <a href=`/book/${bookEntry.slug}/` >
