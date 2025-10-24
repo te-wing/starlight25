@@ -8,7 +8,8 @@ const bookCollection = defineCollection({
     title: z.string(),
     authorInitial: z.string(),
     kind: z.string(),
-    pageNo: z.string(),
+    bookVer: z.string(),
+    pageNo: z.number(),
   }),
 });
 

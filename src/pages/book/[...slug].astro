@@ -17,15 +17,17 @@ const { Content } = await render( entry );
 <Layout>
   <h1>{entry.data.title}</h1>
   <div class="subText">
-    <p>{entry.data.pageNo}，{entry.data.kind}</p>
-    <p>著者：{entry.data.authorInitial}</p>
+    <p>
+      {entry.data.bookVer}p.{entry.data.pageNo}，{entry.data.kind}<br />
+      著者：{entry.data.authorInitial}
+    </p>
   </div>
   <Content />
 </Layout>
 
 <style lang="scss">
   .subText {
-    opacity: 0.8;
+    opacity: 0.7;
     text-align: center;
   }
 </style>
