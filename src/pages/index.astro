@@ -3,12 +3,8 @@ import Layout from "../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
 
-const bookEntries = await getCollection("book", {
-  sort: {
-    field: 'data.pageId',
-    direction: 'asc',
-  },
-});
+const bookEntries = await getCollection("book");
+bookEntries.sort((a, b) => a.data.pageId - b.data.pageId);
 ---
 
 <Layout>

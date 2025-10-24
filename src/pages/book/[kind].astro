@@ -23,6 +23,7 @@ const { kind } = Astro.props;
 const filteredEntries = await getCollection('book', ({ data }) => {
   return data.kind === kind;
 });
+filteredEntries.sort((a, b) => a.data.pageId - b.data.pageId);
 ---
 
 <Layout>

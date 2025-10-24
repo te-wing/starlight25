@@ -2,6 +2,7 @@ import { defineConfig, passthroughImageService } from 'astro/config';
 
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import rehypeExternalLinks from 'rehype-external-links';
 
 import svelte from '@astrojs/svelte';
 import sitemap from '@astrojs/sitemap';
@@ -27,6 +28,16 @@ export default defineConfig({
   integrations: [svelte(), sitemap(), react(), vue(), mdx()],
   markdown: {
     remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [
+      rehypeKatex,
+      [
+        rehypeExternalLinks,
+        {
+          target: '_blank',
+          rel: ['noopener', 'noreferrer'],
+          site: 'https://starlight25.pages.dev'
+        }
+      ],
+    ],
   },
 });
