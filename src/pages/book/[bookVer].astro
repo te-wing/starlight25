@@ -18,8 +18,31 @@ export async function getStaticPaths() {
 };
 
 const { bookVer, entries } = Astro.props;
+
+const filteredEntries = await getCollection('book', ({ data }) => {
+  return data.bookVer === bookVer;
+});
 ---
 
 <Layout>
-  <h1>{bookVer}</h1>
+  <h1>{bookVer}の記事</h1>
+  <ul class="bookListSlot">
+    {filteredEntries.map(bookEntry => (
+      <li>
+        <p>
+          <div>
+            <p>{bookEntry.data.bookVer} p.{bookEntry.data.pageNo}，{bookEntry.data.kind}</p>
+          </div>
+          <div>
+            <a href=`/book/${bookEntry.slug}/` >
+              <h2>{bookEntry.data.title}</h2>
+            </a>
+          </div>
+          <div>
+            <p>{bookEntry.data.authorInitial}</p>
+          </div>
+        </p>
+      </li>
+    ))}
+  </ul>
 </Layout>
