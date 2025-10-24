@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import BlackHole from './ブラックホール.png';
+---
+
+<div class="blackholeSlot">
+  <div class="矢印">
+    <br/>
+    <br/>
+    <p>ブラックホール→</p>
+    <br/>
+    <br/>
+    <p>ワームホール→</p>
+    <br/>
+    <p>ホワイトホール→</p>
+  </div>
+  <Image class="image" src={BlackHole} alt="ブラックホール" />
+</div>
+
+<style lang="scss">
+  .blackholeSlot {
+    display: flex;
+    .矢印 {
+      flex-direction: column;
+      text-align: right;
+      min-width: 70px;
+    }
+    .image {
+      width: 94%;
+      height: 370px;
+    }
+  }
+</style>
