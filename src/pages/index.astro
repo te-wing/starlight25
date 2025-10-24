@@ -4,8 +4,6 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const bookEntries = await getCollection("book");
-
-
 ---
 
 <Layout>
@@ -17,18 +15,19 @@ const bookEntries = await getCollection("book");
   <ul class="bookListSlot">
     {bookEntries.map(bookEntry => (
       <li>
-        <a href={`/book/${bookEntry.slug}/`}>
+        <p>
           <div>
-            <p>{bookEntry.data.bookVer} p.{bookEntry.data.pageNo}，</p>
-            <p>{bookEntry.data.kind}</p>
+            <p><a href=`/book/${bookEntry.data.bookVer}/` >{bookEntry.data.bookVer}</a> p.{bookEntry.data.pageNo}，{bookEntry.data.kind}</p>
           </div>
           <div>
-            <h2>{bookEntry.data.title}</h2>
+            <a href=`/book/${bookEntry.slug}/` >
+              <h2>{bookEntry.data.title}</h2>
+            </a>
           </div>
           <div>
             <p>{bookEntry.data.authorInitial}</p>
           </div>
-        </a>
+        </p>
       </li>
     ))}
   </ul>
@@ -42,12 +41,13 @@ const bookEntries = await getCollection("book");
       border: 1px solid var(--foreground);
       padding: 10px;
       border-radius: 24px 10px;
-      a {
+      p {
         text-decoration: none;
         div {
           display: flex;
-          p, h2 {
+          a, p, h2 {
             margin: 0 2px;
+            padding: 0;
           }
           p {
             color: var(--foreground);

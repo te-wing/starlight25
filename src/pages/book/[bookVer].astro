@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const allEntries = await getCollection('book');
+
+  const uniqueBookVer = [...new Set(allEntries.map((entry) => entry.data.bookVer))];
+
+  return uniqueBookVer.map((bookVer) => {
+    const entries = allEntries.filter((entry) => entry.data.bookVer === bookVer);
+
+    return {
+      params: {bookVer: bookVer},
+      props: {bookVer: bookVer, entries: entries}
+    };
+  });
+};
+
+const { bookVer, entries } = Astro.props;
+---
+
+<Layout>
+  <h1>{bookVer}</h1>
+</Layout>
