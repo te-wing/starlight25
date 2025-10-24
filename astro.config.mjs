@@ -3,14 +3,13 @@ import { defineConfig, passthroughImageService } from 'astro/config';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypeExternalLinks from 'rehype-external-links';
+import remarkGfm from 'remark-gfm'
+import remarkFigureCaption from '@microflash/remark-figure-caption'
 
 import svelte from '@astrojs/svelte';
 import sitemap from '@astrojs/sitemap';
-
 import react from '@astrojs/react';
-
 import vue from '@astrojs/vue';
-
 import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
@@ -27,7 +26,11 @@ export default defineConfig({
   },
   integrations: [svelte(), sitemap(), react(), vue(), mdx()],
   markdown: {
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [
+      remarkMath,
+      remarkGfm,
+      remarkFigureCaption,
+    ],
     rehypePlugins: [
       rehypeKatex,
       [
