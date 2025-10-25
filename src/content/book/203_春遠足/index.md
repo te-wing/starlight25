@@ -1,5 +1,5 @@
 ---
-title: 
+title: 春休み 遠足 活動報告
 authorInitial: 73k F.
 kind: 活動報告編
 bookVer: 下巻
