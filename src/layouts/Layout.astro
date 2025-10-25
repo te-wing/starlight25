@@ -17,6 +17,10 @@ const {
 } = Astro.props;
 
 const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
+
+const pagefindAttr = noindex
+  ? {} // noindexが true の場合（インデックスしない）：空のオブジェクト
+  : { "data-pagefind-body": true };
 ---
 
 <!doctype html>
@@ -40,7 +44,7 @@ const 正規URL = new URL(Astro.url.pathname, Astro.site).href;
 
     <ClientRouter />
   </head>
-  <body>
+  <body {...pagefindAttr}>
     <Header />
     <section class="slot">
       <slot transition:animate=slide />
