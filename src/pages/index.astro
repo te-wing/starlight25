@@ -2,9 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
+import { generateDescription } from "../utils/generate-description.mts";
 
 const bookEntries = await getCollection("book");
 bookEntries.sort((a, b) => a.data.pageId - b.data.pageId);
+
+const bookListWithDescription = bookEntries.map(entry => ({
+  ...entry,
+  description: generateDescription(entry, 100) 
+}));
 ---
 
 <Layout>
@@ -14,7 +20,7 @@ bookEntries.sort((a, b) => a.data.pageId - b.data.pageId);
     著作権等の関係や，プライバシー保護のため，SF当日に配布した紙のバージョンとは一部が異なります．
   </p>
   <ul class="bookListSlot" data-pagefind-ignore>
-    {bookEntries.map(bookEntry => (
+    {bookListWithDescription.map(bookEntry => (
       <li>
         <p>
           <div class="noUnderline">
@@ -24,6 +30,9 @@ bookEntries.sort((a, b) => a.data.pageId - b.data.pageId);
             <a href=`/book/${bookEntry.slug}/` >
               <h2>{bookEntry.data.title}</h2>
             </a>
+          </div>
+          <div>
+            <p class="summaryText">{bookEntry.description}</p>
           </div>
           <div>
             <p>{bookEntry.data.authorInitial}</p>
