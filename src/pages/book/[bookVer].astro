@@ -24,9 +24,13 @@ const filteredEntries = await getCollection('book', ({ data }) => {
   return data.bookVer === bookVer;
 });
 filteredEntries.sort((a, b) => a.data.pageId - b.data.pageId);
+
+const title = `${bookVer}の記事 | The Scientific Seiko 2025`;
 ---
 
-<Layout>
+<Layout
+  title={title}
+>
   <BackToList />
   <h1>{bookVer}の記事</h1>
   <ul class="bookListSlot">

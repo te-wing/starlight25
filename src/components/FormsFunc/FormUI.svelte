@@ -99,11 +99,11 @@
   <p class='linkToOther'>
     {other}のアンケートは
     {#if (about === '部誌')}
-      <a href='/form/planetarium'>こちら</a>
+      <a href='/form/planetarium/'>こちら</a>
     {:else if (about === 'プラネタリウム')}
       <a href='/form/'>こちら</a>
     {:else}
-      <a href='/error'>エラー</a>
+      <a href='/error/'>エラー</a>
     {/if}
   </p>
   <h2>{about}についてのアンケート</h2>
