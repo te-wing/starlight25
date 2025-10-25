@@ -1,0 +1,16 @@
+---
+import pkg from 'react-katex';
+
+const {InlineMath} = pkg;
+---
+
+<div class="centerFix">
+  <p>※<InlineMath math="10^{a}=b" />のとき<InlineMath math="\log_{10}{b} = {a}" />となります</p>
+</div>
+
+<style lang="scss">
+  .centerFix {
+    text-align: center;
+    display: flex;
+  }
+</style>
