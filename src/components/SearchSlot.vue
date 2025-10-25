@@ -25,11 +25,11 @@
       --pagefind-ui-primary: var(--a-default);
       --pagefind-ui-primary-hover: var(--a-hover);
       --pagefind-ui-scale: 1;
-      --pagefind-ui-tag-text: var(--foreground-sub)
+      --pagefind-ui-tag-text: var(--foreground-sub);
       --pagefind-ui-text: var(--foreground);
       --pagefind-ui-background: transparent;
       --pagefind-ui-border: var(--foreground);
-      --pagefind-ui-tag: var(--foregroundSub);
+      --pagefind-ui-tag: var(--foreground-sub);
       --pagefind-ui-border-width: 2px;
       --pagefind-ui-border-radius: 8px;
       --pagefind-ui-image-border-radius: 8px;
