@@ -13,10 +13,16 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render( entry );
+
+// generateDescription
+import { generateDescription } from '../../utils/generate-description.ts';
+const currentPost = entry;
+const postDescription = generateDescription(currentPost, 160);
 ---
 
 <Layout
   title=`${entry.data.title} | The Scientific Seiko 2025`
+  description={postDescription}
 >
   <BackToList />
   <h1>{entry.data.title}</h1>
