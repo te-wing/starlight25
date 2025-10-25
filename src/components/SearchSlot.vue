@@ -22,7 +22,10 @@
 <style scoped lang="scss">
   .searchBox {
     .search {
+      --pagefind-ui-primary: var(--a-default);
+      --pagefind-ui-primary-hover: var(--a-hover);
       --pagefind-ui-scale: 1;
+      --pagefind-ui-tag-text: var(--foreground-sub)
       --pagefind-ui-text: var(--foreground);
       --pagefind-ui-background: transparent;
       --pagefind-ui-border: var(--foreground);
