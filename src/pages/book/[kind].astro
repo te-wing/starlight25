@@ -33,7 +33,7 @@ const title = `${kind}の記事 | The Scientific Seiko 2025`;
 >
   <BackToList />
   <h1>{kind}の記事</h1>
-  <ul class="bookListSlot">
+  <ul data-pagefind-ignore class="bookListSlot">
     {filteredEntries.map(bookEntry => (
       <li>
         <p>

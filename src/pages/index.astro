@@ -13,7 +13,7 @@ bookEntries.sort((a, b) => a.data.pageId - b.data.pageId);
     大阪星光学院天文部の部誌「The Scientific Seiko 2025」のウェブ版です．<br />
     著作権等の関係や，プライバシー保護のため，SF当日に配布した紙のバージョンとは一部が異なります．
   </p>
-  <ul class="bookListSlot">
+  <ul class="bookListSlot" data-pagefind-ignore>
     {bookEntries.map(bookEntry => (
       <li>
         <p>
