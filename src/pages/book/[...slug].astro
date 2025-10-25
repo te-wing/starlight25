@@ -15,7 +15,7 @@ const { entry } = Astro.props;
 const { Content } = await render( entry );
 
 // generateDescription
-import { generateDescription } from '../../utils/generate-description.ts';
+import { generateDescription } from '../../utils/generate-description.mts';
 const currentPost = entry;
 const postDescription = generateDescription(currentPost, 160);
 ---
