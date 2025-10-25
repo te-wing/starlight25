@@ -22,7 +22,8 @@ const { Content } = await render( entry );
   <h1>{entry.data.title}</h1>
   <div class="subText">
     <p>
-      <a href=`/book/${entry.data.bookVer}/` >{entry.data.bookVer}</a> p.{entry.data.pageNo}，<a href=`/book/${entry.data.kind}/`>{entry.data.kind}</a><br />
+      <a href=`/book/${entry.data.bookVer}/` data-pagefind-filter="掲載巻">{entry.data.bookVer}</a>
+       p.{entry.data.pageNo}，<a href=`/book/${entry.data.kind}/`>{entry.data.kind}</a><br />
       著者：{entry.data.authorInitial}
     </p>
   </div>
