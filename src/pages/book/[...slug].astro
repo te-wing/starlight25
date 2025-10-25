@@ -22,7 +22,7 @@ const { Content } = await render( entry );
   <h1>{entry.data.title}</h1>
   <div class="subText">
     <p>
-      {entry.data.bookVer} p.{entry.data.pageNo}，{entry.data.kind}<br />
+      <a href=`/book/${entry.data.bookVer}/` >{entry.data.bookVer}</a> p.{entry.data.pageNo}，<a href=`/book/${entry.data.kind}/`>{entry.data.kind}</a><br />
       著者：{entry.data.authorInitial}
     </p>
   </div>
@@ -33,7 +33,18 @@ const { Content } = await render( entry );
 
 <style lang="scss">
   .subText {
-    opacity: 0.7;
+    p {
+      color: var(--foreground-sub);
+    
+      a {
+        text-decoration: none;
+        color: var(--a-default);
+        &:hover {
+          color: var(--a-hover);
+          text-decoration: underline;
+        }
+      }
+    }
     text-align: center;
   }
   img {
