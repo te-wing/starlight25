@@ -2,6 +2,17 @@
 import { Image } from 'astro:assets';
 import tenmonStamp from '../../images/tenmonStamp.png';
 import Menu from './Menu.vue';
+import { getCollection } from 'astro:content';
+
+const allEntries = await getCollection('book');
+
+const kindArrays = allEntries.map(entry => entry.data.kind);
+const allKinds = kindArrays.flat();
+const uniqueKinds = [...new Set(allKinds)];
+
+const bookVerArrays = allEntries.map(entry => entry.data.bookVer);
+const allVers = bookVerArrays.flat();
+const uniqueVers = [...new Set(allVers)];
 ---
 
 <header>
@@ -9,7 +20,11 @@ import Menu from './Menu.vue';
     <Image class="headerImg" src={tenmonStamp} alt="天文部スタンプ" width={40} />
     <p>The Scientific Seiko</p>
   </a>
-  <Menu client:load />
+  <Menu
+    kinds={uniqueKinds}
+    vers={uniqueVers}
+    client:load
+  />
 </header>
 
 <style lang='scss'>

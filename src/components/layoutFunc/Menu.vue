@@ -1,3 +1,14 @@
+<script setup lang="ts">
+  import { defineProps } from 'vue';
+
+  interface Props {
+    kinds: string[]
+    vers: string[]
+  };
+
+  const props = defineProps<Props>();
+</script>
+
 <template>
   <div class='menuContainer'>
     <button
@@ -16,11 +27,19 @@
         <li>
           <a href="/">ホーム・部誌一覧</a>
           <ul>
+            <li v-for="kind in props.kinds" :key="kind">
+              <a :href="`/book/${kind}/`" >{{ kind }}</a>
+            </li>
+            <br/>
+            <li v-for="ver in props.vers" :key="ver">
+              <a :href="`/book/${ver}/`">{{ ver }}</a>
+            </li>
+            <br/>
             <li><a href="/search/">検索</a></li>
           </ul>
         </li>
         <li>
-          <a>アンケート</a>
+          アンケート
           <ul>
             <li><a href='/form/'>部誌のアンケート</a></li>
             <li><a href='/form/planetarium/'>プラネタリウムのアンケート</a></li>
